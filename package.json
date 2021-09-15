@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shubhangsingh6023/Techout.git"
+    "url": "git+https://github.com/shubhangsingh6023/techout.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/shubhangsingh6023/Techout/issues"
+    "url": "https://github.com/shubhangsingh6023/techout/issues"
   },
-  "homepage": "https://github.com/shubhangsingh6023/Techout#readme",
+  "homepage": "https://github.com/shubhangsingh6023/techout#readme",
   "dependencies": {
     "express": "^4.17.1"
   }
