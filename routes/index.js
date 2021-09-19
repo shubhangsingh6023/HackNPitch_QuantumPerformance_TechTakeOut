@@ -19,7 +19,7 @@ router.get('/', forwardAuthenticated, async (req, res) => {
 router.get('/dashboard', ensureAuthenticated, async (req, res) =>{
   res.render('dashboard', {
     title: 'Techout dashboard | Welcome',
-    styles: ['../css/dashboard.css'],
+    styles: ['../css/dashboard.css','../css/w3schl.css'],
     layout: "layout2",
     user: req.user
   })}
