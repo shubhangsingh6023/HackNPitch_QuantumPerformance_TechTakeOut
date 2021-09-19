@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <% if(typeof styles != 'undefined') { %>
+      <% styles.forEach(elem => { %>
+          <link rel='stylesheet' href="<%= elem %>">
+      <% }); %>
+  <% } %>
+  <!-- Can make this DYNAMIC following above syntax and semantics -->
+  <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+  <title><%= (typeof title != "undefined" ? title : "") %>
+  </title>
+</head>
+<body>
+  <%- body %>
+</body>
+</html>
