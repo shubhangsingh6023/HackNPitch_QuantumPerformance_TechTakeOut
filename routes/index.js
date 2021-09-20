@@ -25,4 +25,29 @@ router.get('/dashboard', ensureAuthenticated, async (req, res) =>{
   })}
 );
 
+router.get('/web1', ensureAuthenticated, async (req, res) =>{
+  res.render('web1', {
+    title: 'Canteen 1 | Welcome',
+    styles: ['https://www.w3schools.com/w3css/4/w3.css','https://fonts.googleapis.com/css?family=Amatic+SC'],
+    layout: "layout2",
+    //user: req.user
+  })}
+);
+router.get('/web2', ensureAuthenticated, async (req, res) =>{
+  res.render('web2', {
+    title: 'Canteen 2 | Welcome',
+    styles: ['https://www.w3schools.com/w3css/4/w3.css','https://fonts.googleapis.com/css?family=Amatic+SC'],
+    layout: "layout2",
+    //user: req.user
+  })}
+);
+router.get('/web3', ensureAuthenticated, async (req, res) =>{
+  res.render('web3', {
+    title: 'Canteen 3 | Welcome',
+    styles: ['https://www.w3schools.com/w3css/4/w3.css','https://fonts.googleapis.com/css?family=Amatic+SC'],
+    layout: "layout2",
+    //user: req.user
+  })}
+);
+
 module.exports = router;
