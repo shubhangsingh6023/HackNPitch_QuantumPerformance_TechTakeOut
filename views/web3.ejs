@@ -36,6 +36,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
   </div>
 </header>
 <!-- Menu Container -->
+
 <div class="w3-container w3-black w3-padding-64 w3-xxlarge" id="menu">
   <div class="w3-content">
   
@@ -51,112 +52,39 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
         <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Drinks</div>
       </a>
     </div>
-
+    
     <div id="Snacks" class="w3-container menu w3-padding-32 w3-white">
-      <h1><b>Veg Momo</b> <span class="w3-right w3-tag w3-dark-grey w3-round">Rs 50</span></h1>
-      <h3 class="w3-text-grey">Fresh tomatoes, fresh cabbage, fresh soup <span> <form action="...">
-          <input type="number" id="count" name="num">
+        <% for (var i=0;i< products.length;i++) { %>
+      <h1><b><%= products[i].title %></b> <span class="w3-right w3-tag w3-dark-grey w3-round">Rs<%= products[i].price %></span></h1>
+      <h3 class="w3-text-grey"><%= products[i].desc %> <span> <form action="...">
           <input type="submit" value="Add to cart">
         </form> </span></h3>
       <hr>
-   
-      <h1><b>Chicken Momo</b> <span class="w3-right w3-tag w3-dark-grey w3-round">Rs 80</span></h1>
-      <h3 class="w3-text-grey">Fresh chicken, fresh cabbage, fresh soup <form action="...">
-        <input type="number" id="count" name="num">
-        <input type="submit" value="Add to cart">
-      </form> </h3>
-      <hr>
-      
-      <h1><b>Veg Burger</b> <span class="w3-right w3-tag w3-dark-grey w3-round">Rs 25</span></h1>
-      <h3 class="w3-text-grey">Fresh bread, fresh tomatoes, fresh onions <form action="...">
-        <input type="number" id="count" name="num">
-        <input type="submit" value="Add to cart">
-      </form></h3>
-      <hr>
-
-      <h1><b>Chicken Burger</b> <span class="w3-right w3-tag w3-dark-grey w3-round">Rs 30</span></h1>
-      <h3 class="w3-text-grey">Fresh bread, fresh chicken, fresh onion <form action="...">
-        <input type="number" id="count" name="num">
-        <input type="submit" value="Add to cart">
-      </form></h3>
-      <hr>
-
-      <h1><b>Chowmein</b> <span class="w3-tag w3-red w3-round">Hot!</span><span class="w3-right w3-tag w3-dark-grey w3-round">Rs 60</span></h1>
-      <h3 class="w3-text-grey">Spicy and tasty chowmein <form action="...">
-        <input type="number" id="count" name="num">
-        <input type="submit" value="Add to cart">
-      </form></h3>
-      <hr>
-
-      <h1><b>Egg Roll</b> <span class="w3-tag w3-grey w3-round">New</span><span class="w3-right w3-tag w3-dark-grey w3-round">Rs 30</span></h1>
-      <h3 class="w3-text-grey">Fresh bread and 2 whole eggs <form action="...">
-        <input type="number" id="count" name="num">
-        <input type="submit" value="Add to cart">
-      </form></h3>
+      <% } %>      
     </div>
+    
 
     <div id="Lunch" class="w3-container menu w3-padding-32 w3-white">
-      <h1><b>Puri Sabji</b> <span class="w3-tag w3-grey w3-round">Popular</span> <span class="w3-right w3-tag w3-dark-grey w3-round">Rs 30</span></h1>
-      <h3 class="w3-text-grey">Crispy puri and spicy sabji <form action="...">
-        <input type="number" id="count" name="num">
-        <input type="submit" value="Add to cart">
-      </form></h3>
-      <hr>
-   
-      <h1><b>Veg Meal</b> <span class="w3-right w3-tag w3-dark-grey w3-round">Rs 50</span></h1>
-      <h3 class="w3-text-grey">Rice, dal and sabji <form action="...">
-        <input type="number" id="count" name="num">
-        <input type="submit" value="Add to cart">
-      </form></h3>
-      <hr>
-      
-      <h1><b>Chicken Meal</b> <span class="w3-right w3-tag w3-dark-grey w3-round">Rs 70</span></h1>
-      <h3 class="w3-text-grey">Rice, dal and chicken <form action="...">
-        <input type="number" id="count" name="num">
-        <input type="submit" value="Add to cart">
-      </form></h3>
-      <hr>
-
-      <h1><b>Fish Meal</b> <span class="w3-right w3-tag w3-dark-grey w3-round">Rs 70</span></h1>
-      <h3 class="w3-text-grey">Rice, dal and fish <form action="...">
-        <input type="number" id="count" name="num">
-        <input type="submit" value="Add to cart">
-      </form></h3>
+      <% for (var i=0;i< products2.length;i++) { %>
+        <h1><b><%= products2[i].title %></b> <span class="w3-right w3-tag w3-dark-grey w3-round">Rs<%= products2[i].price %></span></h1>
+        <h3 class="w3-text-grey"><%= products2[i].desc %> <span> <form action="...">
+            <input type="submit" value="Add to cart">
+          </form> </span></h3>
+        <hr>
+        <% } %>      
     </div>
 
 
     <div id="Drinks" class="w3-container menu w3-padding-32 w3-white">
-      <h1><b>Coke</b> <span class="w3-right w3-tag w3-dark-grey w3-round">Rs 30</span></h1>
-      <h3 class="w3-text-grey">Refreshing coke <form action="...">
-        <input type="number" id="count" name="num">
-        <input type="submit" value="Add to cart">
-      </form></h3>
-      <hr>
-   
-      <h1><b>Coffee</b> <span class="w3-right w3-tag w3-dark-grey w3-round">Rs 15</span></h1>
-      <h3 class="w3-text-grey">Strong and warm coffee <form action="...">
-        <input type="number" id="count" name="num">
-        <input type="submit" value="Add to cart">
-      </form></h3>
-      <hr>
-      
-      <h1><b>Tea</b> <span class="w3-right w3-tag w3-dark-grey w3-round">Rs 10</span></h1>
-      <h3 class="w3-text-grey">Warm and tasty tea <form action="...">
-        <input type="number" id="count" name="num">
-        <input type="submit" value="Add to cart">
-      </form></h3>
-      <hr>
-      
-      <h1><b>Water</b> <span class="w3-right w3-tag w3-dark-grey w3-round">Rs 10</span></h1>
-      <h3 class="w3-text-grey">Chilled water <form action="...">
-        <input type="number" id="count" name="num">
-        <input type="submit" value="Add to cart">
-      </form></h3>
-    </div><br>
-
+      <% for (var i=0;i< products3.length;i++) { %>
+        <h1><b><%= products3[i].title %></b> <span class="w3-right w3-tag w3-dark-grey w3-round">Rs<%= products3[i].price %></span></h1>
+        <h3 class="w3-text-grey"><%= products3[i].desc %> <span> <form action="...">
+            <input type="submit" value="Add to cart">
+          </form> </span></h3>
+        <hr>
+        <% } %>      
   </div>
 </div>
-
 
 <!-- About Container -->
 <div class="w3-container w3-padding-64 w3-red w3-grayscale w3-xlarge" id="about">

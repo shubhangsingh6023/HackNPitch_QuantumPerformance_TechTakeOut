@@ -4,8 +4,9 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const flash = require('connect-flash');
 const session = require('express-session');
+const expressHsb = require('express-handlebars'); 
 const path = require('path');
-
+var MongoDBStore = require('connect-mongodb-session')(session);
 const app = express();
 
 // Passport Config
@@ -29,6 +30,7 @@ app.use('/css', express.static(path.join(__dirname, 'public/css')));
 
 // EJS
 app.use(expressLayouts);
+//app.engine('.ejs',expressHsb({defaultLayout:'layout',extname: '.ejs'}));
 app.set('view engine', 'ejs');
 //app.set('layout','./views/layout2');
 
@@ -40,7 +42,10 @@ app.use(
   session({
     secret: 'secret',
     resave: true,
-    saveUninitialized: true
+    saveUninitialized: true,
+    store: new MongoDBStore({ mongooseConnection: mongoose.connection}),
+    cookie: {maxAge: 180*60*1000 }
+
   })
 );
 
@@ -56,6 +61,7 @@ app.use(function(req, res, next) {
   res.locals.success_msg = req.flash('success_msg');
   res.locals.error_msg = req.flash('error_msg');
   res.locals.error = req.flash('error');
+  res.locals.session = req.session;
   next();
 });
 
