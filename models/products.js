@@ -1,6 +1,11 @@
 const mongoose = require('mongoose');
 
 const UserSchema = new mongoose.Schema({
+  foodid: {
+    type: String,
+    required: true
+  },
+  
   title: {
     type: String,
     required: true

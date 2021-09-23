@@ -6,7 +6,7 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const expressHsb = require('express-handlebars'); 
 const path = require('path');
-var MongoDBStore = require('connect-mongodb-session')(session);
+var MongoStore = require('connect-mongo');
 const app = express();
 
 // Passport Config
@@ -43,8 +43,9 @@ app.use(
     secret: 'secret',
     resave: true,
     saveUninitialized: true,
-    store: new MongoDBStore({ mongooseConnection: mongoose.connection}),
-    cookie: {maxAge: 180*60*1000 }
+    store:  MongoStore.create({ mongoUrl: 'mongodb+srv://soham:SOHAMZ12@cluster0.eqg4n.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'},{ useNewUrlParser: true ,useUnifiedTopology: true}),
+    cookie: {maxAge: 180*60*1000 },
+    
 
   })
 );
