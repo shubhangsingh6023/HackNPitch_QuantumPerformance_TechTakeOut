@@ -83,7 +83,7 @@ ul li a.cart .cart-basket {
     <div id="Snacks" class="w3-container menu w3-padding-32 w3-white">
       <% for (var i=0;i< products.length;i++) { 
          if (products[i].foodid == 'snacks') {%>
-      <h1><%= products[i].title %> <span class="w3-right w3-tag w3-dark-grey w3-round">Rs<%= products[i].price %></span></h1>
+      <h1><%= products[i].title %> <span class="w3-right w3-tag w3-dark-grey w3-round">&#8377;<%= products[i].price %></span></h1>
       <h3 class="w3-text-grey"><%= products[i].desc %> <span> <form action="/add-to-cart2/<%= products[i]._id %>" method="GET">
           <input type="submit" value="Add to cart">
         </form> </span></h3>
@@ -97,7 +97,7 @@ ul li a.cart .cart-basket {
     <div id="Lunch" class="w3-container menu w3-padding-32 w3-white">
       <% for (var i=0;i< products.length;i++) { 
          if (products[i].foodid == 'lunch') {%>
-      <h1><%= products[i].title %> <span class="w3-right w3-tag w3-dark-grey w3-round">Rs<%= products[i].price %></span></h1>
+      <h1><%= products[i].title %> <span class="w3-right w3-tag w3-dark-grey w3-round">&#8377;<%= products[i].price %></span></h1>
       <h3 class="w3-text-grey"><%= products[i].desc %> <span> <form action="/add-to-cart2/<%= products[i]._id %>" method="GET">
           <input type="submit" value="Add to cart">
         </form> </span></h3>
@@ -111,7 +111,7 @@ ul li a.cart .cart-basket {
     <div id="Drinks" class="w3-container menu w3-padding-32 w3-white">
       <% for (var i=0;i< products.length;i++) { 
          if (products[i].foodid == 'drinks') {%>
-      <h1><%= products[i].title %> <span class="w3-right w3-tag w3-dark-grey w3-round">Rs<%= products[i].price %></span></h1>
+      <h1><%= products[i].title %> <span class="w3-right w3-tag w3-dark-grey w3-round">&#8377;<%= products[i].price %></span></h1>
       <h3 class="w3-text-grey"><%= products[i].desc %> <span> <form action="/add-to-cart2/<%= products[i]._id %>" method="GET">
           <input type="submit" value="Add to cart">
         </form> </span></h3>

@@ -128,7 +128,16 @@ router.get('/view_cart',ensureAuthenticated,  (req,res,next)=>{
     return res.render('view_cart', {products: null, styles:['https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'], layout: "layout2"});
   }
   const cart = new Cart(req.session.cart);
-  res.render('view_cart', {products:cart.generateArray(), totalPrice: cart.totalPrice, styles:['https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'],layout: "layout2"});
+  res.render('view_cart', {products:cart.generateArray(), totalPrice: cart.totalPrice, styles:['https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css','../css/dashboard.css'],layout: "layout2"});
+});
+router.get('/checkout', ensureAuthenticated, (req, res, next)=>{
+  //check to see if a shopping cart exists
+  if(!req.session.cart){
+      return res.redirect('/view_cart');
+  }
+  const cart = new Cart(req.session.cart);
+  //const errMsg = req.flash('error')[0];
+  return res.render('checkout',{total: cart.totalPrice,layout:"layout2",styles:['https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css']});
 });
 
 module.exports = router;

@@ -1,3 +1,8 @@
+<br>
+<h1 style="text-align: center;">Order Summary</h1>
+<br>
+<br>
+
 <% if (products) {%>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -11,7 +16,7 @@
         <strong><%= products[i].item.title%></strong>
         <span class='label label-success'>&#8377; <%= products[i].price%></span>
         <div class="btn-group">
-          <button class="btn btn-primary btn-xs dropdown-toggle">
+          <button class="btn btn-primary btn-xs dropdown-toggle" data-bs-toggle="dropdown"  >
             Action <span class ="caret"></span></button>
             <ul class =' dropdown-menu'>
               <li>
@@ -35,8 +40,18 @@
 <hr>
 <div class="row">
   <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
-    <a href="/checkout" class="btn btn-success" role= "button">Checkout</a>
+    <a href="/checkout" class="btn btn-success" role= "button" >Checkout</a>
   </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<div class="bottom-container" id="foot">
+  <a class="footer-link" href="">Google</a>
+  <a class="footer-link" href="">Facebook</a>
+  <a class="footer-link" href="">Twitter</a>
+  <p class="copy"><strong> © 2021 Tech Takeout</strong></p>
 </div>
 %>
 

@@ -11368,3 +11368,9 @@ header.masthead .bg-circle-4 {
     font-size: 4rem;
   }
 }
+.map-applet {
+  padding: 20px 0px;
+  width: 60%;
+  margin: auto;
+  box-sizing: border-box;
+}
