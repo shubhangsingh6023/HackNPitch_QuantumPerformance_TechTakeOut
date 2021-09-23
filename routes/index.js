@@ -80,7 +80,7 @@ router.get('/web3', ensureAuthenticated, async (req, res) =>{
 );
 router.get('/add-to-cart/:id', ensureAuthenticated, async (req, res) => {
     var productId = req.params.id;
-    var cart = new Cart(req.session.cart ? req.session.cart : {});
+    var cart = new Cart(req.session.cart ? req.session.cart : { item: [Object], qty: 0, price: 0});
 
     Product.findById(productId, function (err, product) {
       if (err) {
@@ -95,7 +95,7 @@ router.get('/add-to-cart/:id', ensureAuthenticated, async (req, res) => {
   });
     router.get('/add-to-cart2/:id', ensureAuthenticated, async (req, res) => {
       var productId = req.params.id;
-      var cart = new Cart(req.session.cart ? req.session.cart : {});
+      var cart = new Cart(req.session.cart ? req.session.cart : { item: [Object], qty: 0, price: 0});
   
       Product.findById(productId, function (err, product) {
         if (err) {
@@ -110,7 +110,7 @@ router.get('/add-to-cart/:id', ensureAuthenticated, async (req, res) => {
   });
   router.get('/add-to-cart3/:id', ensureAuthenticated, async (req, res) => {
     var productId = req.params.id;
-    var cart = new Cart(req.session.cart ? req.session.cart : {});
+    var cart = new Cart(req.session.cart ? req.session.cart :  {} );
 
     Product.findById(productId, function (err, product) {
       if (err) {
@@ -122,6 +122,13 @@ router.get('/add-to-cart/:id', ensureAuthenticated, async (req, res) => {
       res.redirect('/web3');
 
     });
+});
+router.get('/view_cart',ensureAuthenticated,  (req,res,next)=>{
+  if(!req.session.cart){
+    return res.render('view_cart', {products: null, styles:['https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'], layout: "layout2"});
+  }
+  const cart = new Cart(req.session.cart);
+  res.render('view_cart', {products:cart.generateArray(), totalPrice: cart.totalPrice, styles:['https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'],layout: "layout2"});
 });
 
 module.exports = router;

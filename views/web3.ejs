@@ -39,12 +39,14 @@ ul li a.cart .cart-basket {
     <a href="#" class="w3-bar-item w3-button">HOME</a>
     <a href="#menu" class="w3-bar-item w3-button">MENU</a>
     <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
-    <a class="w3-bar-item w3-button">Shopping Cart</a>
+    <a href="/view_cart/" class="w3-bar-item w3-button">Shopping Cart</a>
     <a class="cart position-relative d-inline-flex" aria-label="View your shopping cart"> 
       <i class="fas fa fa-shopping-cart fa-lg hel"></i>
-      <span class=" hel cart-basket d-flex align-items-center justify-content-center">
-         <%= session.cart.totalQty %>  
-      </span> 
+      <% if(session.cart) { %>
+        <span class=" hel cart-basket d-flex align-items-center justify-content-center">
+         <%= session.cart.totalQty %>
+        </span> 
+        <% } %>
     </a>
   </div>
 </div>

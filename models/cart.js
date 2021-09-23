@@ -1,7 +1,7 @@
 module.exports = function Cart(oldCart){
-    this.items = oldCart.items || {};
-    this.totalQty = oldCart.totalQty || 0;
-    this.totalPrice = oldCart.totalPrice  || 0;
+    this.items = oldCart.items || {  item: [Object], qty: 0, price: 0 } ;
+    this.totalQty = oldCart.totalQty || 0 ;
+    this.totalPrice = oldCart.totalPrice || 0 ;
   
     this.add = function(item, id){
       var storedItem = this.items[id];
@@ -12,7 +12,7 @@ module.exports = function Cart(oldCart){
       storedItem.price = storedItem.item.price * storedItem.qty;
       this.totalQty++;
       this.totalPrice += Number(storedItem.item.price);
-    }
+    };
     this.generateArray = function() {
       var arr= [];
       for (var id in this.items){
