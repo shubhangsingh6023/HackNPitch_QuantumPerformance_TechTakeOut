@@ -4,6 +4,11 @@ This is a base website aimed towards unifying all the major canteens in JU. This
 
 ### Version: 1.0.0
 
+### MongoDB
+
+Open "config/keys.js" and add your MongoDB URI, local or Atlas.
+
+
 ### Usage
 Run 
 
@@ -13,14 +18,13 @@ $ npm install
 to install all the dependencies.
 
 
-
-
 Run
 
 ```sh
 $ node productseeder.js
 ```
-to insert the cart products into the MongoDB database.
+to insert all the menu items into the MongoDB database.
+
 
 Run
 ```sh
@@ -34,6 +38,3 @@ http://localhost:5000
 
 ```
 to run the website.
-### MongoDB
-
-Open "config/keys.js" and add your MongoDB URI, local or Atlas.
